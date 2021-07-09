@@ -1,0 +1,304 @@
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--light-grayish-blue);
+}
+
+.main {
+    background: white;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 10px 10px 40px 5px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    font-size: 30px;
+    color: var(--very-dark-grayish-blue);
+}
+p {
+    color: var(--desaturated-dark-blue);
+}
+.name {
+    color: var(--very-dark-grayish-blue);
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+.date {
+    color: var(--grayish-blue);
+    margin-top: 3px;
+}
+
+/* Profile box */
+.profile-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+/* Profile picture */
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-picture img {
+    width: 60px;
+    height: 60px;
+}
+/* Name and date */
+.name-date {
+    margin-left: 20px;
+}
+
+/* Share button */
+.share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background: var(--light-grayish-blue);
+    border-radius: 50%;
+}
+
+.share:hover {
+    cursor: pointer;
+    background: var(--desaturated-dark-blue);
+}
+.share:hover img{
+    filter: invert(100%) sepia(12%) saturate(111%) hue-rotate(216deg) brightness(512%) contrast(100%);
+}
+
+.clicked {
+    background: var(--desaturated-dark-blue);
+}
+.share.clicked img {
+    filter: invert(100%) sepia(12%) saturate(111%) hue-rotate(216deg) brightness(512%) contrast(100%);
+}
+
+.share-box {
+    background: var(--very-dark-grayish-blue);
+}
+.share-box p {
+    color: var(--grayish-blue);
+    font-size: 13px;
+    letter-spacing: 5px;
+}
+.share-box p:hover {
+    cursor: default;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+div.show {
+    visibility: visible;
+}
+
+
+/* Desktop */
+@media screen and (min-width: 900px){
+    .mobile {
+        display: none;
+    }
+    /* Body */
+    body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    /* Main */
+    .main {
+        width: 1070px;
+        height: 400px;
+        display: flex;
+        border-radius: 15px;
+        /* overflow: hidden; */
+        position: relative;
+    }
+
+    /* Drawers image */
+    #drawers {
+        background: url("./img/drawers.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 425px;
+        height: auto;
+        border-radius: 10px 0 0 10px;
+    }
+
+    /* Info box */
+    .info-box {
+        /* background-color: yellow; */
+        max-width: 60%;
+        height: auto;
+        padding-top: 50px;
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Share box */
+    .share-box {
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 35px;
+        width: 250px;
+        border-radius: 10px;
+        top: 50%;
+        left: 80.3%;
+    }
+
+    /* Social */
+    .social {
+        /* background-color: red; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    #triangle-down {
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid var(--very-dark-grayish-blue);
+        position: absolute;
+        top: 95%;
+        left: 45%;
+      }
+}
+/* Desktop End ------------------------------------- */
+
+/* Mobile */
+@media screen and (max-width: 899px) {
+    h1 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    /* Main */
+    .main {
+        max-width: 90%;
+        margin: 100px auto 30px auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+    }
+    .info-box > p {
+        max-width: 90%;
+        line-height: 20px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    /* Drawers image */
+    #drawers {
+        background: url("./img/drawers.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: auto;
+        height: 200px;
+    }
+
+    /* Info box */
+    .info-box {
+        /* background-color: yellow; */
+        height: auto;
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Profile picture */
+    .profile-picture {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .profile-picture img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Share button */
+    .share {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 35px;
+        width: 35px;
+        background: var(--light-grayish-blue);
+        border-radius: 50%;
+    
+    }
+
+    /* Share box */
+    .share-box {
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        /* box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1); */
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 35px;
+        width: 100%;
+        height: 70px;
+        /* border-radius: 10px; */
+        bottom: 0;
+    }
+
+    /* Social */
+    .social {
+        /* background-color: red; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+    }
+
+    #triangle-down {
+        display: none;
+      }
+
+    .share {
+        z-index: 10;
+    }
+}
